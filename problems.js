@@ -7,8 +7,8 @@
     Write a function `plusTen` that takes in a number as an argument and
     returns the sum of that number and 10.
 */
-function plusFive(num) {
-    return num + 5;
+function plusTen(num) {
+    return num + 10;
 }
 
 
