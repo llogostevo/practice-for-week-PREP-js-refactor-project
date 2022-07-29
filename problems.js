@@ -22,11 +22,13 @@ function plusTen(num) {
     multiples of 7 that are less than max.
 */
 function returnSevens(max) {
+    sevens = [];
     for (let i = 0; i < max; i++) {
         if (i % 7 === 0) {
-            console.log(i);
+            sevens.push(i);
         }
     }
+    return sevens;
 }
 
 
@@ -59,11 +61,11 @@ function bothStringsIncluded(sentence, word1, word2) {
     you get when you multiply all the numbers together.
 */
 function productArray(arr) {
-    let sum = 0;
+    let product = 1;
     for (let i = 0; i < arr.length; i++) {
-        sum *= arr[i];
+        product *= arr[i];
     }
-    return sum;
+    return product;
 }
 
 
@@ -76,8 +78,8 @@ function productArray(arr) {
     Write a function `fiveAndEleven` that takes in a number and returns `true`
     if the number is divisible by BOTH 5 and 11 and `false` otherwise.
 */
-function threeOrSeven(num) {
-    return num % 3 === 0 || num % 7 === 0;
+function fiveAndEleven(num) {
+    return num % 5 === 0 && num % 11 === 0;
 }
 
 
@@ -90,11 +92,11 @@ function threeOrSeven(num) {
     Write a function, `countConsonants(word)`, that takes in a string word and
     returns the number of consonants in the word.
 */
-function countVowels(word) {
+function countConsonants(word) {
     const vowels = ["a", "e", "i", "o", "u"];
     let count = 0;
     for (let i = 0; i < word.length; i++) {
-        if (vowels.includes(word[i])) {
+        if (!(vowels.includes(word[i])) && (word[i] != ' ')) {
             count++;
         }
     }
@@ -118,8 +120,17 @@ function countVowels(word) {
     `.split('')` function on strings to make a copy of the string as an array. 
     The `.join('')` function joins the elements in an array into a string.
 */
-function whisper(str) {
-    return str.toLowerCase();
+function alternatingLetters(str) {
+    letters = str.split("");
+    for (let i=0; i < str.length; i++){
+        if (i%2 >0) {
+            letters[i]=letters[i].toUpperCase();
+        } else {
+            letters[i]=letters[i].toLowerCase();
+        }
+    }
+
+    return letters.join('');
 }
 
 
